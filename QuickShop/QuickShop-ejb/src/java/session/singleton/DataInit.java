@@ -68,7 +68,7 @@ public class DataInit {
             System.out.println("Supermarket Mapping 4:");
             int[][] map4 = mapStringToArray(s4.getMap(), s4.getDimensionX(), s4.getDimensionY());
           
-            List<Item> processed = generateShortestPath(map, itemSessionBeanLocal.retrieveAllItemsBySupermarketId(s.getSupermarketId()));
+            List<Item> processed = generateShortestPath(map3, itemSessionBeanLocal.retrieveAllItemsBySupermarketId(s3.getSupermarketId()));
             processed.forEach(x -> System.out.println(x.getItemName()));
 
         }
