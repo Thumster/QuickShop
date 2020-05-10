@@ -30,6 +30,7 @@ public class ApplicationConfig extends Application {
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(ws.restful.CorsFilter.class);
+        resources.add(ws.restful.PathResource.class);
         resources.add(ws.restful.QuickShopResource.class);
     }
     

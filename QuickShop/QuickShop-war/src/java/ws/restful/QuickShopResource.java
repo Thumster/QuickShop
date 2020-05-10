@@ -95,30 +95,6 @@ public class QuickShopResource {
         }
     }
 
-    @Path("retrieveSortedItems")
-    @PUT
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response filterItemsList(FilterItemsListReq filterItemsListReq) {
-
-        if (filterItemsListReq != null) {
-
-            try {
-                Supermarket s = supermarketSessionBeanLocal.retrieveSupermarketById(filterItemsListReq.getSupermarketId());
-
-                List<Item> result = generateShortestPath(mapStringToArray(s.getMap(),s.getDimensionX(),s.getDimensionY()), filterItemsListReq.getItems());
-
-                return Response.status(Response.Status.OK).entity(new FilterItemsListRsp(result)).build();
-            } catch (Exception ex) {
-
-                return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(new ErrorRsp("Failed to filter shopping list.")).build();
-            }
-        } else {
-            return Response.status(Response.Status.BAD_REQUEST).entity(new ErrorRsp("Supplied null value.")).build();
-        }
-
-    }
-
     private CategorySessionBeanLocal lookupCategorySessionBeanLocal() {
         try {
             javax.naming.Context c = new InitialContext();

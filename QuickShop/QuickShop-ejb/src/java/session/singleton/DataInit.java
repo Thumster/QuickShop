@@ -52,24 +52,24 @@ public class DataInit {
         } else {
 
             System.out.println("Supermarket Mapping 1:");
-            int[][] map = mapStringToArray(s.getMap(), s.getDimensionX(), s.getDimensionY());
+            //int[][] map = mapStringToArray(s.getMap(), s.getDimensionX(), s.getDimensionY());
             
             Supermarket s2 = supermarketSessionBeanLocal.retrieveSupermarketById(2L);
             System.out.println("Supermarket Mapping 2:");
-            int[][] map2 = mapStringToArray(s2.getMap(), s2.getDimensionX(), s2.getDimensionY());
+            //int[][] map2 = mapStringToArray(s2.getMap(), s2.getDimensionX(), s2.getDimensionY());
             
 
             Supermarket s3 = supermarketSessionBeanLocal.retrieveSupermarketById(3L);
             System.out.println("Supermarket Mapping 3:");
-            int[][] map3 = mapStringToArray(s3.getMap(), s3.getDimensionX(), s3.getDimensionY());
+            //int[][] map3 = mapStringToArray(s3.getMap(), s3.getDimensionX(), s3.getDimensionY());
             
 
             Supermarket s4 = supermarketSessionBeanLocal.retrieveSupermarketById(4L);
             System.out.println("Supermarket Mapping 4:");
-            int[][] map4 = mapStringToArray(s4.getMap(), s4.getDimensionX(), s4.getDimensionY());
+            //int[][] map4 = mapStringToArray(s4.getMap(), s4.getDimensionX(), s4.getDimensionY());
           
-            List<Item> processed = generateShortestPath(map3, itemSessionBeanLocal.retrieveAllItemsBySupermarketId(s3.getSupermarketId()));
-            processed.forEach(x -> System.out.println(x.getItemName()));
+//            List<Item> processed = generateShortestPath(map3, itemSessionBeanLocal.retrieveAllItemsBySupermarketId(s3.getSupermarketId()));
+//            processed.forEach(x -> System.out.println(x.getItemName()));
 
         }
 
